@@ -6,8 +6,8 @@ require("dotenv").config();
 console.log(process.env.PORT);
 console.log(process.env.v1);
 
-const PORT = 3000 || process.env.PORT;
-const v1 = 1 || process.env.v1;
+const PORT = process.env.PORT || 3000;
+const v1 = process.env.v1 || 1;
 
 app.get("/", (req, res) => {
   console.log("Hello World");
