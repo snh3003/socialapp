@@ -3,15 +3,12 @@ const app = express();
 const format = require("date-format");
 require("dotenv").config();
 
-console.log(process.env.PORT);
-console.log(process.env.v1);
-
 const PORT = process.env.PORT || 3000;
 const v1 = process.env.v1 || 1;
 
 app.get("/", (req, res) => {
   console.log("Hello World");
-  res.status(201).send("Hello World!!!, I am a server");
+  res.status(201).send("Hello World!!!, Server deployed on Heroku");
 });
 
 app.get(`/api/${v1}/insta`, (req, res) => {
