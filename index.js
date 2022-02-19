@@ -56,6 +56,11 @@ app.get(`/api/${v1}/linkedin`, (req, res) => {
   res.status(201).json({ linkedin });
 });
 
+app.get(`/api/${v1}/:token`, (req, res) => {
+  console.log(req.params.token);
+  res.status(201).send(`Param: ${req.params.token}`);
+});
+
 app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`);
 });
