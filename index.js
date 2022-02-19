@@ -53,7 +53,7 @@ app.get(`/api/${v1}/linkedin`, (req, res) => {
     date: format.asString("dd-MM-yyyy", new Date()),
   };
 
-  res.status(201).json({ linkedin });
+  res.status(200).json({ linkedin });
 });
 
 app.get(`/api/${v1}/:token`, (req, res) => {
