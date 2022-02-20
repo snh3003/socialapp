@@ -3,6 +3,13 @@ const app = express();
 const format = require("date-format");
 require("dotenv").config();
 
+// swagger docs
+const swaggerUi = require("swagger-ui-express");
+const yaml = require("yamljs");
+const swaggerDocument = yaml.load("./swagger.yaml");
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 const PORT = process.env.PORT || 3000;
 const v1 = process.env.v1 || 1;
 
